@@ -1,3 +1,51 @@
-body {
-    background: #eee;
+@import "variables";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Tests
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.mt0 {
+  margin-top: 0;
+}
+
+.mt1 {
+  margin-top: 1rem;
+}
+
+.mb1 {
+  margin-top: 1rem;
+}
+
+.mtx1 {
+  margin: 0 1rem;
+}
+
+.table * {
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.navbar-search {
+  border: 0;
+  background: #fff;
+  color: #333;
+  border-radius: 40px;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.dropdown-menu>li>a {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 15px;
+  .badge {
+    margin-left: 10px;
+  }
 }

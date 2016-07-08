@@ -42,6 +42,11 @@ gulp.task('sass', function(){
     .pipe(browserSync.reload({stream:true}))
 });
 
+gulp.task('move-js', function(){
+  gulp.src("src/styles/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js")
+    .pipe(gulp.dest('compiled/scripts/'))
+});
+
 
 /* Twig Templates */
 function getJsonData (file, cb) {
@@ -57,7 +62,7 @@ function getJsonData (file, cb) {
     });
 }
 gulp.task('twig',function(){
-    return gulp.src('src/templates/urls/**/*')
+    return gulp.src('src/templates/urls/**/*.twig')
         .pipe(plumber({
           errorHandler: function (error) {
             console.log(error.message);
@@ -91,7 +96,7 @@ gulp.task('scripts-watch',['scripts'],browserSync.reload);
 /* Compile */
 gulp.task('compile',['sass','scripts','twig']);
 
-gulp.task('default',['compile','browser-sync'],function(){
+gulp.task('default',['compile','browser-sync','move-js'],function(){
     gulp.watch("src/styles/**/*.scss", ['sass']);
     gulp.watch("src/scripts/**/*.js", ['scripts-watch']);
     gulp.watch(['src/templates/**/*','src/data/*.json'],['twig-watch']);

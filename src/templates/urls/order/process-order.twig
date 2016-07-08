@@ -1,0 +1,83 @@
+{% extends '../../_layout.twig' %}
+
+{% block body %}
+
+  <h2 class="mt0">Order No. 1111</h2>
+  <p class="lead"><a class="label label-lg label-danger">Not processed</a></p>
+  <p>Hannas Tork <a href="#" class="js-toggle-details">See details</a></p>
+  Print packing Add shipping info
+  <hr>
+  <div class="hidden js-details">
+    <div class="panel panel-default">
+      <div class="panel-heading">Order information</div>
+      <div class="panel-body">
+
+      </div>
+    </div>
+  </div>
+  <h2 class="mt0">Process order</h2>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Requested units</div>
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th>Barcode</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Pool unit</th>
+                <th>Not billable</th>
+                <th>Warehouse</th>
+                <th>Requested count</th>
+              </tr>
+              <tr class="success">
+                <td>00001</td>
+                <td>CTR200</td>
+                <td>Absorption dryer</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Scanned units</div>
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th>Barcode</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Pool unit</th>
+                <th>Not billable</th>
+                <th>Warehouse</th>
+                <th>Requested count</th>
+              </tr>
+              <tr class="success">
+                <td>00001</td>
+                <td>CTR200</td>
+                <td>Absorption dryer</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="/order/processed-order.html" class="btn btn-success pull-right">Checkout & print</a>
+
+
+{% endblock %}
