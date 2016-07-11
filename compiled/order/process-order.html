@@ -1,0 +1,163 @@
+<html>
+<head>
+  <title>Corroventa</title>
+  <link rel="stylesheet" href="/styles/app.min.css">
+  <script src="https://use.fontawesome.com/718862e781.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Corroventa</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="navbar-left collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <li><a href="#" class="navbar-item"><i class="fa fa-plus" aria-hidden="true"></i> New Order</a></li>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Prepare for shipping <span class="badge">10</span></a></li>
+            <li><a href="#">Handle returns <span class="badge">2</span></a></a></li>
+            <li><a href="#">Handle items <span class="badge">4</span></a></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+    <form class="navbar-form navbar-right" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control navbar-search" placeholder="Search">
+      </div>
+    </form>
+    <div class="navbar-right">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-list-ul" aria-hidden="true"></i> Browse lists <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Clients</a></li>
+            <li><a href="#">Invoices</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="#">Rental Units</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="wrapper">
+      <div class="order-actions pull-right">
+    <a href="#" class="btn btn-default">Print packing</a> <a href="#" class="btn btn-default">Add shipping info</a>
+  </div>
+  <h2 class="mt0">Order No. 1111</h2>
+  <p class="lead"><a class="label label-lg label-danger">Not processed</a></p>
+
+  <h3>Client</h3>
+  <p>Hannas Tork</p>
+  <div class="order-details">
+    <a href="#" class="js-toggle-details">See details</a>
+    <hr>
+    <div class="hidden js-details">
+      <div class="panel panel-default">
+        <div class="panel-heading">Order information</div>
+        <div class="panel-body">
+        </div>
+      </div>
+    </div>
+  </div>
+  <form class="form-inline m0 pull-right">
+    <div class="form-group">
+      <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Add barcode">
+    </div>
+    <button type="submit" class="btn btn-default"><i class="fa fa-plus" aria-hidden="true"></i> Add unit</button>
+  </form>
+  <h2>Process order</h2>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Requested units</div>
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th>Barcode</th>
+                <th>Type</th>
+                <th>Pool units</th>
+                <th>Requested count</th>
+                <th>Added so far</th>
+                <th>Preliminary booked</th>
+                <th>Shipped units</th>
+                <th>Warehouse</th>
+              </tr>
+              <tr class="success">
+                <td>00001</td>
+                <td>CTR200</td>
+                <td>Absorption dryer</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <p>*Red marked lines means that the count of added units is greater than the requested amount</p>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+          Scanned units
+        </div>
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th>Barcode</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Pool unit</th>
+                <th>Not billable</th>
+                <th>Hour counter</th>
+              </tr>
+              <tr class="success">
+                <td>00001</td>
+                <td>CTR200</td>
+                <td>Absorption dryer</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="/order/processed-order.html" class="btn btn-success pull-right">Checkout & print</a>
+
+
+
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/scripts/bootstrap.js"></script>
+  <script src="/scripts/app.min.js"></script>
+</body>
+</html>

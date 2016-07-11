@@ -1,0 +1,280 @@
+<html>
+<head>
+  <title>Corroventa</title>
+  <link rel="stylesheet" href="/styles/app.min.css">
+  <script src="https://use.fontawesome.com/718862e781.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Corroventa</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="navbar-left collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <li><a href="#" class="navbar-item"><i class="fa fa-plus" aria-hidden="true"></i> New Order</a></li>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Prepare for shipping <span class="badge">10</span></a></li>
+            <li><a href="#">Handle returns <span class="badge">2</span></a></a></li>
+            <li><a href="#">Handle items <span class="badge">4</span></a></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+    <form class="navbar-form navbar-right" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control navbar-search" placeholder="Search">
+      </div>
+    </form>
+    <div class="navbar-right">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-list-ul" aria-hidden="true"></i> Browse lists <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Clients</a></li>
+            <li><a href="#">Invoices</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="#">Rental Units</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="wrapper">
+      <a href="/order/process-order.html" class="js-process hidden btn btn-lg btn-primary pull-right mt1"><i class="fa fa-barcode" aria-hidden="true"></i> Prepare shipping</a>
+  <h2 class="mt1">Order name</h2>
+  <p class="lead"><a class="label label-lg label-danger">Not processed</a></p>
+  <hr>
+  <h3>Select client</h3>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#clients"><i class="fa fa-folder-open" aria-hidden="true"></i> Browse clients</button>
+  <div class="modal fade" tabindex="-1" role="dialog" id="clients">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Browse customer</h4>
+      </div>
+      <div class="modal-body">
+        <p>This should contain the same list as "Customer" view where you can search and select units.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+  <hr>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Order information
+      <a href="#" class="pull-right">Edit</a>
+    </div>
+    <div class="panel-body">
+
+    </div>
+  </div>
+  <h3>Select Rental Units</h3>
+  <div class="clearfix">
+    <form class="form-inline pull-left">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rentalUnits"><i class="fa fa-folder-open" aria-hidden="true"></i> Browse rental units</button>
+      <div class="modal fade" tabindex="-1" role="dialog" id="rentalUnits">
+  <div class="modal-dialog modal-dialog--right">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Browse units</h4>
+      </div>
+      <div class="modal-body">
+          <h4>Selected units</h4>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Barcode</th>
+                  <th>Type</th>
+                  <th>Category</th>
+                  <th>Serial number</th>
+                  <th>Status</th>
+                  <th>Shipping Warehouse</th>
+                  <th>Organizing Warehouse</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="hidden js-units--no">
+                  <td colspan="8"><em>No units selected</em></td>
+                </tr>
+
+                <tr class="success js-unit--selected">
+                  <td>00001</td>
+                  <td>CTR200</td>
+                  <td>Absorption dryer</td>
+                  <td>89 200 178</td>
+                  <td><span class="label label-success">Available</span></td>
+                  <td>Bankeryd</td>
+                  <td>Bankeryd</td>
+                  <td><a href="#" class="btn btn-danger js-add-rental-unit">Remove</a></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+
+        <div class="table-responsive">
+          <h4>Select units</h4>
+          <div class="rental-units-search mb1">
+            <div class="row">
+              <div class="col-sm-2">
+                <select>
+                  <option>Country</option>
+                </select>
+              </div>
+              <div class="col-sm-2">
+                <select>
+                  <option>Warehouse</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Barcode</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Serial number</th>
+                <th>Status</th>
+                <th>Shipping Warehouse</th>
+                <th>Organizing Warehouse</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>00001</td>
+                <td>CTR200</td>
+                <td>Absorption dryer</td>
+                <td>89 200 178</td>
+                <td><span class="label label-success">Available</span></td>
+                <td>Bankeryd</td>
+                <td>Bankeryd</td>
+                <td><a href="#" class="btn btn-success js-add-rental-unit">Select</a></td>
+              </tr>
+              <tr>
+                <td>00001</td>
+                <td>CTR200</td>
+                <td>Absorption dryer</td>
+                <td>89 200 178</td>
+                <td><span class="label label-success">Available</span></td>
+                <td>Bankeryd</td>
+                <td>Bankeryd</td>
+                <td><a href="#" class="btn btn-success js-add-rental-unit">Select</a></td>
+              </tr>
+              <tr>
+                <td>00001</td>
+                <td>CTR200</td>
+                <td>Absorption dryer</td>
+                <td>89 200 178</td>
+                <td><span class="label label-success">Available</span></td>
+                <td>Bankeryd</td>
+                <td>Bankeryd</td>
+                <td><a href="#" class="btn btn-success js-add-rental-unit">Select</a></td>
+              </tr>
+              <tr>
+                <td>00001</td>
+                <td>CTR200</td>
+                <td>Absorption dryer</td>
+                <td>89 200 178</td>
+                <td><span class="label label-success">Available</span></td>
+                <td>Bankeryd</td>
+                <td>Bankeryd</td>
+                <td><a href="#" class="btn btn-success js-add-rental-unit">Select</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+      <span class="mtx1 inline-block">or add by barcode</span>
+      <div class="form-group">
+        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Barcode">
+      </div>
+      <button type="submit" class="btn btn-default"><i class="fa fa-plus" aria-hidden="true"></i> Add unit</button>
+    </form>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">Requested units</div>
+    <div class="panel-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Barcode</th>
+              <th>Type</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Pool unit</th>
+              <th>Not billable</th>
+              <th>Hour counter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>00001</td>
+              <td>CTR200</td>
+              <td>Absorption dryer</td>
+              <td><span class="label label-success">Available</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      Rental units weight: 0.00kg
+    </div>
+  </div>
+  <h3>Comment</h3>
+  <textarea class="form-control mb1">Add a comment</textarea>
+  <div class="pull-right">
+    <a href="#" class="btn btn-success js-save-for-process">Confirm order</a>
+    <a href="#" class="btn btn-success hidden js-saved-order"><i class="fa fa-check" aria-hidden="true"></i> Saved</a>
+  </div>
+
+
+
+
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="/scripts/bootstrap.js"></script>
+  <script src="/scripts/app.min.js"></script>
+</body>
+</html>
